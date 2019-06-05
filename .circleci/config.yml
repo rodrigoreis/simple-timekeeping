@@ -2,13 +2,19 @@ version: 2
 jobs:
   build:
     docker:
-      - image: microsoft/dotnet:sdk
+    - image: microsoft/dotnet:sdk
     steps:
-      - checkout
-      - run: dotnet build
+    - checkout
+    - run: dotnet build
   test:
     docker:
-      - image: microsoft/dotnet:sdk
+    - image: microsoft/dotnet:sdk
     steps:
-      - checkout
-      - run: dotnet test
+    - checkout
+    - run: dotnet test
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
+    - test
