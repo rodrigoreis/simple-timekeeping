@@ -9,7 +9,7 @@ Durante o curso de Arquitetura de Softwares, o comportamento de um Arquiteto e p
 
 Neste trabalho final, visamos demonstrar a ação de um arquiteto de software e seu time.
 
-# Froma da apresentação
+# Forma da apresentação
 1. O arquiteto deve se apresentar, descrever a aplicação, sua funcionalidade, o tipo de dados que são tratados e os resultados que o software gerencia (pode ser usado um Power point para isso).
 
 2. Em uma análise via diagramas, demonstre os pontos em que ele, o arquiteto, identificou a demanda de adequação a um dos padrões disponíveis de programação. Neste momento, o Arquiteto deve demonstrar:
