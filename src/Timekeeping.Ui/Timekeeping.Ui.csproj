@@ -16,4 +16,9 @@
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Timekeeping.DependencyInjection\Timekeeping.DependencyInjection.csproj" />
+  </ItemGroup>
+
 </Project>
