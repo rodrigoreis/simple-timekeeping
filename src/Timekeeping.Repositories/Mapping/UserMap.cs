@@ -15,7 +15,13 @@ namespace Timekeeping.Repositories.Mapping
                 .Property(m => m.Id)
                 .HasColumnName("user_id")
                 .HasColumnType("INTEGER")
-                .ValueGeneratedOnAdd();
+                .ValueGeneratedOnAdd()
+                .IsRequired();
+
+            builder
+                .Property(m => m.ProjectId)
+                .HasColumnName("project_id")
+                .HasColumnType("INTEGER");
 
             builder
                 .Property(m => m.Name)
@@ -30,6 +36,12 @@ namespace Timekeeping.Repositories.Mapping
                 .HasColumnType("TEXT")
                 .HasMaxLength(255)
                 .IsRequired();
+
+            builder
+                .HasMany(m => m.TimeEntries)
+                .WithOne(n => n.User)
+                .HasForeignKey(m => m.UserId)
+                .HasConstraintName("fk_users_time_entries_user_id");
 
             builder
                 .HasKey(m => m.Id)

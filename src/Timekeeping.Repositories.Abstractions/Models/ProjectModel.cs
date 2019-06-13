@@ -2,13 +2,12 @@
 
 namespace Timekeeping.Repositories.Abstractions.Models
 {
-    public class UserModel
+    public class ProjectModel
     {
         public int Id { get; set; }
-        public int? ProjectId { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public ProjectModel Project { get; set; }
+        public int JobJourneyCharge { get; set; }
+        public virtual ICollection<UserModel> Users { get; set; }
         public virtual ICollection<TimeEntryModel> TimeEntries { get; set; }
     }
 }
