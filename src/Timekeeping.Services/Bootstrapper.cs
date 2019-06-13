@@ -1,16 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Timekeeping.Services.Contexts;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Timekeeping.Services.Abstractions;
 
 namespace Timekeeping.Services
 {
     public static class Bootstrapper
     {
-        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddDbContext<TimekeepingContext>(options => options.UseSqlite(configuration["ConnectionStrings:Default"]));
-
+            services.TryAddScoped<IUserService, UserService>();
             return services;
         }
     }

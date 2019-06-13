@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Timekeeping.Services.Contexts
+namespace Timekeeping.Repositories.Contexts
 {
     public class TimekeepingContext : DbContext
     {

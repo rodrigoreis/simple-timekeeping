@@ -1,9 +1,9 @@
-﻿namespace Timekeeping.Services.Models
+﻿namespace Timekeeping.Repositories.Abstractions.Models
 {
     public class UserModel
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
     }
 }

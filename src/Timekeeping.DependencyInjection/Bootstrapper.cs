@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Timekeeping.Repositories;
 using Timekeeping.Services;
 
 namespace Timekeeping.DependencyInjection
@@ -8,7 +9,9 @@ namespace Timekeeping.DependencyInjection
     {
         public static IServiceCollection AddTimekeeping(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddRepositories(configuration);
+            services.AddTimekeepingContext(configuration);
+            services.AddRepositories();
+            services.AddServices();
 
             return services;
         }
