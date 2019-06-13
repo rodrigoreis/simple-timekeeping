@@ -2,13 +2,12 @@
 
 namespace Timekeeping.Services.Abstractions.Dtos
 {
-    public class UserDto : IDto
+    public class ProjectDto : IDto
     {
         public int Id { get; set; }
-        public int? ProjectId { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public ProjectDto Project { get; set; }
+        public int JobJourneyCharge { get; set; }
+        public virtual ICollection<UserDto> Users { get; set; }
         public virtual ICollection<TimeEntryDto> TimeEntries { get; set; }
     }
 }

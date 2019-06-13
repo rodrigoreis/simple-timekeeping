@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Timekeeping.Acl\Timekeeping.Acl.csproj" />
     <ProjectReference Include="..\Timekeeping.Repositories\Timekeeping.Repositories.csproj" />
     <ProjectReference Include="..\Timekeeping.Services\Timekeeping.Services.csproj" />
   </ItemGroup>

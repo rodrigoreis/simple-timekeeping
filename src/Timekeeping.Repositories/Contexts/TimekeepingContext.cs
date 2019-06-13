@@ -9,7 +9,7 @@ namespace Timekeeping.Repositories.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(TimekeepingContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(Bootstrapper).Assembly);
         }
     }
 }

@@ -14,8 +14,7 @@ namespace Timekeeping.UnitTests.Fixture
 {
     public class TestServerFixture<TStartup> where TStartup : class
     {
-        private readonly TestServer _testServer;
-        private readonly IServiceProvider _serviceProvider;
+        private TestServer _testServer;
 
         public Action<WebHostBuilderContext, IConfigurationBuilder> ConfigureAppConfiguration { get; set; }
 
@@ -25,13 +24,20 @@ namespace Timekeeping.UnitTests.Fixture
 
         public TestServerFixture()
         {
-            _testServer = _testServer ?? (_testServer = new TestServer(CreateBuilder()));
-            _serviceProvider = _testServer.Host.Services;
+            ConfigureAppConfiguration = delegate
+            {
+            };
+            ConfigureServices = delegate
+            {
+            };
+            Configure = delegate
+            {
+            };
         }
 
         public T Resolve<T>()
         {
-            return _serviceProvider.GetService<T>();
+            return ((_testServer ?? (_testServer = new TestServer(CreateBuilder()))).Host.Services).GetService<T>();
         }
 
         private WebHostBuilder CreateBuilder()
@@ -46,7 +52,10 @@ namespace Timekeeping.UnitTests.Fixture
                     b.SetBasePath(Directory.GetCurrentDirectory());
                     b.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                     b.AddEnvironmentVariables();
-                });
+                    ConfigureAppConfiguration(context, b);
+                })
+                .ConfigureServices(ConfigureServices)
+                .Configure(Configure);
 
             return webHostBuilder;
         }

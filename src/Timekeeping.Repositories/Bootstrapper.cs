@@ -10,7 +10,7 @@ namespace Timekeeping.Repositories
 {
     public static class Bootstrapper
     {
-        public static IServiceCollection AddTimekeepingContext(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddRepositoriesContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<TimekeepingContext>(
                 options => options.UseSqlite(configuration["ConnectionStrings:Default"])
@@ -21,7 +21,7 @@ namespace Timekeeping.Repositories
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.TryAddScoped<IRepository<UserModel>, UserRepository>();
+            services.TryAddScoped<IModelRepository<UserModel>, UserRepository>();
 
             return services;
         }

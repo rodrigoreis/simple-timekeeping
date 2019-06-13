@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Timekeeping.Repositories;
 using Timekeeping.Services;
+using Timekeeping.Services.Acl;
 
 namespace Timekeeping.DependencyInjection
 {
@@ -9,7 +10,8 @@ namespace Timekeeping.DependencyInjection
     {
         public static IServiceCollection AddTimekeeping(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTimekeepingContext(configuration);
+            services.AddAntiCorruptionLayer();
+            services.AddRepositoriesContext(configuration);
             services.AddRepositories();
             services.AddServices();
 

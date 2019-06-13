@@ -7,19 +7,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C4D3239-F0B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tst", "tst", "{266E2FA2-CEEA-4085-8E4F-179E57017151}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.DependencyInjection", "src\Timekeeping.DependencyInjection\Timekeeping.DependencyInjection.csproj", "{5C344DE7-9407-4D10-BF76-633892FD782D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.DependencyInjection", "src\Timekeeping.DependencyInjection\Timekeeping.DependencyInjection.csproj", "{5C344DE7-9407-4D10-BF76-633892FD782D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.Ui", "src\Timekeeping.Ui\Timekeeping.Ui.csproj", "{F2C59DD5-4529-471E-A2B1-EAA8D369DFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.Ui", "src\Timekeeping.Ui\Timekeeping.Ui.csproj", "{F2C59DD5-4529-471E-A2B1-EAA8D369DFE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.Repositories", "src\Timekeeping.Repositories\Timekeeping.Repositories.csproj", "{29B18ED5-DDBC-4D8B-BDB2-EA88BF3143D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.Repositories", "src\Timekeeping.Repositories\Timekeeping.Repositories.csproj", "{29B18ED5-DDBC-4D8B-BDB2-EA88BF3143D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.Repositories.Abstractions", "src\Timekeeping.Repositories.Abstractions\Timekeeping.Repositories.Abstractions.csproj", "{D4D0DE99-FDFF-46A3-A362-A55BA2E79AD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.Repositories.Abstractions", "src\Timekeeping.Repositories.Abstractions\Timekeeping.Repositories.Abstractions.csproj", "{D4D0DE99-FDFF-46A3-A362-A55BA2E79AD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.Services.Abstractions", "src\Timekeeping.Services.Abstractions\Timekeeping.Services.Abstractions.csproj", "{73A91852-B936-4B8D-8F9F-250AC997AAB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.Services.Abstractions", "src\Timekeeping.Services.Abstractions\Timekeeping.Services.Abstractions.csproj", "{73A91852-B936-4B8D-8F9F-250AC997AAB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.Services", "src\Timekeeping.Services\Timekeeping.Services.csproj", "{14E58F6C-9090-4625-BA4C-FAE132506120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.Services", "src\Timekeeping.Services\Timekeeping.Services.csproj", "{14E58F6C-9090-4625-BA4C-FAE132506120}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.UnitTests", "tst\Timekeeping.UnitTests\Timekeeping.UnitTests.csproj", "{733B6203-3A1F-49AB-89AB-C0E38088B308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timekeeping.UnitTests", "tst\Timekeeping.UnitTests\Timekeeping.UnitTests.csproj", "{733B6203-3A1F-49AB-89AB-C0E38088B308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timekeeping.Acl", "src\Timekeeping.Acl\Timekeeping.Acl.csproj", "{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +117,18 @@ Global
 		{733B6203-3A1F-49AB-89AB-C0E38088B308}.Release|x64.Build.0 = Release|Any CPU
 		{733B6203-3A1F-49AB-89AB-C0E38088B308}.Release|x86.ActiveCfg = Release|Any CPU
 		{733B6203-3A1F-49AB-89AB-C0E38088B308}.Release|x86.Build.0 = Release|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Debug|x64.Build.0 = Debug|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Debug|x86.Build.0 = Debug|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Release|x64.ActiveCfg = Release|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Release|x64.Build.0 = Release|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Release|x86.ActiveCfg = Release|Any CPU
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +141,7 @@ Global
 		{73A91852-B936-4B8D-8F9F-250AC997AAB6} = {4C4D3239-F0B3-4769-B214-2EE77E33C81E}
 		{14E58F6C-9090-4625-BA4C-FAE132506120} = {4C4D3239-F0B3-4769-B214-2EE77E33C81E}
 		{733B6203-3A1F-49AB-89AB-C0E38088B308} = {266E2FA2-CEEA-4085-8E4F-179E57017151}
+		{14B96639-C5D5-4D26-A2C1-B513DA8A0B0C} = {4C4D3239-F0B3-4769-B214-2EE77E33C81E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B81F85E0-7592-44D0-AE73-352B17B9FD80}

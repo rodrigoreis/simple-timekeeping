@@ -2,7 +2,7 @@
 
 namespace Timekeeping.Repositories.Abstractions.Models
 {
-    public class ProjectModel
+    public class ProjectModel : IModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
