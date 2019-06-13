@@ -15,17 +15,18 @@ namespace Timekeeping.UnitTests
 {
     public class UserTest : IClassFixture<TestServerFixture<Startup>>
     {
-        private TestServerFixture<Startup> _fixture;
+        private readonly TestServerFixture<Startup> _fixture;
         private readonly IDtoService<UserDto> _userService;
 
         public UserTest(TestServerFixture<Startup> fixture)
         {
-            fixture.ConfigureServices += (_, services) =>
+            _fixture = fixture;
+
+            _fixture.ConfigureServices += (_, services) =>
             {
                 services.AddAntiCorruptionLayer();
             };
 
-            _fixture = fixture;
             _userService = new UserService(_fixture.Resolve<IMapper>(), new UserRepository(_fixture.BuildInMemoryDbContext()));
         }
 
@@ -50,9 +51,12 @@ namespace Timekeeping.UnitTests
 
         [Fact]
         [Trait("User", "Should delete an user")]
-        public void ShouldDeleteAnUser()
+        public async Task ShouldDeleteAnUser()
         {
-            throw new NotImplementedException();
+            await _userService.AddAsync(new UserDto { Name = "Rodrigo Reis", Email = "rodrigo.reis@squadra.com.br" });
+            var inserted = await _userService.GetAsync(u => u.Name.Equals("Rodrigo Reis") && u.Email.Equals("rodrigo.reis@squadra.com.br"));
+            _fixture.Method(_userService.DeleteAsync, inserted)
+                .Should().NotThrow();
         }
 
         [Fact]
