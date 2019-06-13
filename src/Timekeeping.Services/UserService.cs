@@ -15,7 +15,7 @@ namespace Timekeeping.Services
             _repository = repository;
         }
 
-        public async Task<UserDto> CreateUserAsync(UserDto user)
+        public async Task<UserDto> SaveAsync(UserDto user)
         {
             var userModel = await _repository.SaveAsync(new UserModel
             {

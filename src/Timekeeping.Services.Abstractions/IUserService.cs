@@ -5,6 +5,6 @@ namespace Timekeeping.Services.Abstractions
 {
     public interface IUserService
     {
-        Task<UserDto> CreateUserAsync(UserDto user);
+        Task<UserDto> SaveAsync(UserDto user);
     }
 }

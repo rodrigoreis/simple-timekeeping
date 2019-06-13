@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using System;
+using System.Threading.Tasks;
 using Timekeeping.Repositories;
 using Timekeeping.Services;
 using Timekeeping.Services.Abstractions;
@@ -25,15 +26,17 @@ namespace Timekeeping.UnitTests
         [Trait("User", "Should create an user")]
         public void ShouldCreateAnUser()
         {
-            _fixture.Method(_userService.CreateUserAsync, new UserDto { Name = "Rodrigo Reis", Email = "rodrigo.reis@squadra.com.br" })
+            _fixture.Method(_userService.SaveAsync, new UserDto { Name = "Rodrigo Reis", Email = "rodrigo.reis@squadra.com.br" })
                 .Should().NotThrow();
         }
 
         [Fact]
         [Trait("User", "Should edit an user")]
-        public void ShouldEditAnUser()
+        public async Task ShouldEditAnUser()
         {
-            throw new NotImplementedException();
+            var inserted = (await _userService.SaveAsync(new UserDto { Name = "Rodrigo Reis", Email = "rodrigo.reis@squadra.com.br" }));
+            inserted.Name = "Rodrigo Reis - Edited";
+            _fixture.Method(_userService.SaveAsync, inserted).Should().NotThrow();
         }
 
         [Fact]
